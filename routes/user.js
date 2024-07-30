@@ -16,12 +16,14 @@ router.post('/signup', async (req,res)=>{
         }).then(function(value){res.json({
             msg:"User created successfully"
         })})
+        
     } catch (error) {
         res.json({
             msg:"failed to create user"
         })
     }
     console.log(response)
+   
 
 })
 

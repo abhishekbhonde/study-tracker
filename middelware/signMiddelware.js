@@ -7,13 +7,16 @@ router.use(express.json());
 
 
 
-router.post('/signin', (req,res)=>{
+function signMiddelware(req,res, next){
     const {username, password} = req.body;
     try {
         const response = User.find({
             username,
             password
         }).then(function(value){
+           if(value){
+                next()
+           }
             res.json({
                 msg:"User signed successfully"
             })
@@ -23,4 +26,6 @@ router.post('/signin', (req,res)=>{
             msg:"Failed to singin"
         })
     }
-} )
+} 
+
+module.exports = signMiddelware;

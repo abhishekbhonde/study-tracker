@@ -11,8 +11,18 @@ const userSchema = new mongoose.Schema({
     password:String
 })
 
-const User = mongoose.model('User', userSchema);
 
+const StudyTaskSchema = new mongoose.Schema({
+        task:String,
+        createdDate: {
+            type: Date,
+            default: Date.now // Set the default value to the current date and time
+        }
+})
+
+const User = mongoose.model('User', userSchema);
+const StudyTask = mongoose.model('StudyTask', StudyTaskSchema);
 module.exports= {
-    User
+    User,
+    StudyTask
 }
