@@ -1,0 +1,10 @@
+*{
+  margin: 0;
+  padding: 0;
+  background-color: rgb(255, 255, 255);
+}
+
+/* src/index.css */
+body {
+  font-family: 'Open Sans', sans-serif;
+}
