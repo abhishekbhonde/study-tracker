@@ -1,7 +1,12 @@
 import React from 'react'
 import forward from '../../public/right-arrow.png'
+import { useNavigate } from 'react-router-dom'
 
 const Hero = () => {
+  const navigate = useNavigate();
+  const HandleGetStarted = ()=>{
+      navigate('/tasks')
+  }
   return (
     <div>
        <div className='flex justify-center items-center mt-[50px]'>
@@ -10,7 +15,7 @@ const Hero = () => {
                 <h1 className='text-5xl  text-blue-600 mt-[10px]'>in one place</h1>
                 <p className='text-xl text-slate-400 mt-[20px]'>Study Tracker helps you manage all of your <br /> electronic research records, so you can focus less <br /> on juggling spreadsheets, and more on doing  <br /> science.</p>
                 <div className='mt-[40px] flex gap-6 '>
-                <button className=' flex border rounded-lg p-[15px] border-black'>Get Started
+                <button onClick={HandleGetStarted} className=' flex border rounded-lg p-[15px] border-black'>Get Started
                  <img className='w-[20px] ml-[2px] ' src={forward} alt="" />
                 </button>
                 <button>Know More</button>

@@ -31,4 +31,18 @@ router.get('/gettasks', async(req, res)=>{
             tasks
         })
     });
+    
+router.delete('/deletetask/:id', async (req, res) => {
+        const { id } = req.params;
+        try {
+          const result = await StudyTask.findByIdAndDelete(id);
+          if (result) {
+            res.json({ msg: 'Task deleted successfully' });
+          } else {
+            res.status(404).json({ msg: 'Task not found' });
+          }
+        } catch (error) {
+          res.status(500).json({ msg: 'Failed to delete task' });
+        }
+      });
 module.exports = router;
