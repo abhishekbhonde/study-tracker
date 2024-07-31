@@ -5,6 +5,7 @@ import Signup from './Components/Signup';
 import Navbar from './Components/Navbar';
 import Home from './Components/Home';
 import Tasks from './Components/Tasks';
+import ProgressTracker from './Components/ProgressTracker';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/signin" element={<Signin />} />
           <Route path="/" element={<Home/>}/>
           <Route path="/tasks" element={<Tasks/>}/>
+          <Route path="/progresstracker" element={<ProgressTracker/>}/>
         </Routes>
       </div>
     </Router>

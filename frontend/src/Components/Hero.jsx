@@ -7,6 +7,9 @@ const Hero = () => {
   const HandleGetStarted = ()=>{
       navigate('/tasks')
   }
+  const ProgressTracker = ()=>{
+    navigate('/progresstracker')
+}
   return (
     <div>
        <div className='flex justify-center items-center mt-[50px]'>
@@ -18,7 +21,7 @@ const Hero = () => {
                 <button onClick={HandleGetStarted} className=' flex border rounded-lg p-[15px] border-black'>Get Started
                  <img className='w-[20px] ml-[2px] ' src={forward} alt="" />
                 </button>
-                <button>Know More</button>
+                <button  onClick={ProgressTracker}>Progress Tracker</button>
                 </div>
 
           </div>

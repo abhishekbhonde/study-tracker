@@ -20,9 +20,27 @@ const StudyTaskSchema = new mongoose.Schema({
         }
 })
 
+const ProgressTracker = new mongoose.Schema({
+    date: {
+        type: String,
+        required: true,
+        unique: true // Assuming one entry per day
+    },
+    studyhours: {
+        type: Number,
+        required: true
+    },
+    resthours: {
+        type: Number,
+        required: true
+    }
+})
+
+const Progress = mongoose.model('Progress', ProgressTracker)
 const User = mongoose.model('User', userSchema);
 const StudyTask = mongoose.model('StudyTask', StudyTaskSchema);
 module.exports= {
     User,
-    StudyTask
+    StudyTask,
+    Progress
 }
